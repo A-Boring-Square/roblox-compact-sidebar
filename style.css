@@ -1,0 +1,81 @@
+/*
+ROBLOX COMPACT SIDEBAR - By A-Boring-Square (https://github.com/A-Boring-Square)
+*/
+
+
+/* SIDEBAR */
+div[class*="width-[289px]"],
+div[class*="width-[288px]"] {
+    width: 72px !important;
+    min-width: 72px !important;
+
+    position: fixed !important;
+    left: 0;
+    top: 0;
+    height: 100vh;
+
+    z-index: 1000;
+    overflow: hidden;
+}
+
+/* SIDEBAR CONTENT */
+nav a {
+    justify-content: center !important;
+    padding-left: 6px !important;
+    padding-right: 6px !important;
+}
+
+nav a > span:last-child {
+    display: none !important;
+}
+
+nav ul {
+    gap: 4px !important;
+}
+
+nav [class*="icon"] {
+    transform: scale(0.9);
+}
+
+
+/* REMOVE PREMIUM ITEM CLEANLY */
+li:has(a[href*="/premium/membership"]) {
+    display: none !important;
+}
+
+
+/* REMOVE STRUCTURAL SPACER ELEMENTS */
+ls,
+ls::after {
+    display: none !important;
+    content: none !important;
+}
+
+
+/* PAGE LAYOUT SHIFT */
+/* ONLY reserve space for sidebar; do not resize layout */
+body {
+    padding-left: 72px !important;
+}
+
+
+/* MAIN CONTENT NOTE: (DO NOT BREAK GRID/CAROUSEL MATH)  */
+main,
+div[role="main"] {
+    width: auto !important;
+    margin-left: 0 !important;
+}
+
+
+/* GAME CAROUSEL SAFETY */
+.game-carousel,
+.wide-game-tile-carousel,
+.scrollable-carousel,
+.home-page-carousel {
+    max-width: 100% !important;
+}
+
+
+/* CLEAN UP POSSIBLE OVERLAYS */
+div[role="presentation"].absolute.inset-\[0\] {    pointer-events: none !important;
+}
